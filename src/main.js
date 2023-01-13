@@ -21,31 +21,47 @@ window.onload = () => {
             bio = profile.bio;
 
           const nameEL = document.getElementById("name");
-          nameEL.innerText = name;
+          if (name && nameEL) {
+            nameEL.innerText = name;
+          }
 
           const bioEL = document.getElementById("bio");
-          bioEL.innerText = bio;
+          if (bio && bioEL) {
+            bioEL.innerText = bio;
+          }
 
           const handleEL = document.getElementById("handle");
-          handleEL.innerText = handle;
+          if (handle && handleEL) {
+            handleEL.innerText = handle;
+          }
 
           const avatarEL = document.getElementById("avatar");
-          avatarEL.src = avatarURL;
+          if (avatarURL && avatarEL) {
+            avatarEL.src = avatarURL;
+          }
 
           const profileEL = document.getElementById("profile");
-          profileEL.classList.remove("hidden");
+          if (profileEL) {
+            profileEL.classList.remove("hidden");
+          }
         }, 1000);
       })
       .catch((err) => {
         const errorEL = document.getElementById("error");
-        errorEL.classList.remove("hidden");
+        if (errorEL) {
+          errorEL.classList.remove("hidden");
+        }
 
         const errorTextEL = document.getElementById("error-message");
-        errorTextEL.innerText = err.message;
+        if (errorTextEL) {
+          errorTextEL.innerText = err.message;
+        }
       })
       .finally(() => {
         const loadingEL = document.getElementById("loading");
-        loadingEL.classList.add("hidden");
+        if (loadingEL) {
+          loadingEL.remove();
+        }
       });
   }
 };

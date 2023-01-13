@@ -5,44 +5,169 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArProfiles</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./main.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+      .splash__container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #151515;
+      }
+
+      .splash {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: receiptor;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      .highlight__sub {
+        color: rgb(238, 22, 173);;
+      }
+
+      .splash img {
+        width: 15vh;
+        max-width: 216px;
+        height: auto;
+        animation : pulse 2s 2s infinite;
+      }
+
+      .splash__text {
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        align-items: center;
+      }
+
+      .splash__text h1 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      .splash__text h2 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin: 0;
+        animation-name: text;
+        animation-duration: 1s;
+        animation-delay: 0.7s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      @media screen and (prefers-color-scheme: light) {
+        body {
+          background: #fff;
+        }
+
+        .splash__text {
+          color: #151515;
+        }
+
+        .splash__text h1 {
+          color: #151515;
+        }
+
+        .splash__text h2 {
+          color: #151515;
+        }
+      }
+
+      @keyframes text {
+        from {
+          letter-spacing: 0px;
+        }
+        to {
+          letter-spacing: 4px;
+        }
+      }
+
+      @keyframes receiptor {
+        from {
+            transform: scale(0);
+            opacity: 0.25;
+        }
+        50% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+        to {
+          margin-bottom: 100px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes pulse {
+        from {
+            transform : scale(1);
+            opacity   : 1;
+        }
+        10% {
+            transform : scale(0.95);
+            opacity   : 0.25;
+        }
+        60% {
+            transform : scale(1);
+            opacity   : 1;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        .splash {
+          flex-direction: column;
+        }
+
+        .splash__text h2 {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class='bg-white w-330px h-375px rounded-2xl hover:scale-125 hover:animate-pulse hover:cursor-pointer'>
-    <img
-      class='w-full h-140px rounded-t-2xl'
-      src=""
-      alt='background-image'
-    />
-    <img
-      class='rounded-full border-white border-8 flex justify-center items-center my-0 mx-auto relative top--15%'
-      src={profile}
-      alt='profile'
-    />
-    <div class='flex gap-3 justify-center relative top--10%'>
-      <h1 class='font-bold'>Victor Crest</h1>{" "}
-      <span class='text-grayishBlue'>26</span>
-    </div>
-    <span class='flex justify-center relative top--10% my-1 text-grayishBlue'>
-      London
-    </span>
-    <hr class='relative top--5% bg-DarkGray h-1px opacity-20' />
-    <div class='flex justify-center items-center gap-8 mb-5'>
-      <div class='flex flex-col items-center'>
-        <span class='font-bold'>80K</span>
-        <span class='text-DarkGray text-xs'>Followers</span>
-      </div>
-      <div class='flex flex-col items-center'>
-        <span class='font-bold'>803K</span>
-        <span class='text-DarkGray text-xs'>Likes</span>
-      </div>
-      <div class='flex flex-col items-center'>
-        <span class='font-bold'>1.4K</span>
-        <span class='text-DarkGray text-xs'>Photos</span>
+    <div id="loading" class="splash__container">
+      <div class="splash">
+        <img src="https://arweave.net/aKIwse_933T-oQpxJnyj-DP0pG03k_88Iw04EbHoolk" alt="Receiptor Logo">
+        <div class="splash__text">
+          <h1>ArProfile.org</h1>
+          <h2>Your identity on the <span class="highlight__sub">permaweb</span></h2>
+        </div>
       </div>
     </div>
-  </div>
+    <div id="profile" class="overflow-hidden shadow-xl w-full h-screen bg-blue-500">
+      <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" />
+      <div class="flex justify-center -mt-8">
+          <img src="https://i.imgur.com/8Km9tLL.jpg" class="rounded-full border-solid border-white border-2 -mt-3">
+      </div>
+      <div class="text-center px-3 pb-6 pt-2">
+        <h3 id="name" class="text-white text-sm bold font-sans">Olivia Dunham</h3>
+        <p class="mt-2 font-sans font-light text-white">Hello, i'm from another the other side!</p>
+      </div>
+      <div class="flex justify-center pb-3 text-white">
+        <div class="text-center mr-3 border-r pr-3">
+          <h2>34</h2>
+          <span>Photos</span>
+        </div>
+        <div class="text-center">
+          <h2>42</h2>
+          <span>Friends</span>
+        </div>
+      </div>
+    </div>
+    <div id="error" class="h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-24 py-8 rounded-lg shadow-2xl">
+        <p class="text-6xl md:text-7xl lg:text-9xl font-bold tracking-wider text-red-300">ERROR</p>
+        <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-red-500 mt-4">Something Went Wrong</p>
+        <p id="error-message" class="text-red-500 mt-8 py-2 border-y-2 text-center">Whoops, something went wrong on our servers.</p>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
