@@ -25,6 +25,16 @@ window.onload = () => {
           nameEL.innerText = name;
         }
 
+        const bannerEl = document.getElementById("banner");
+        if (
+          bannerURL &&
+          bannerEl &&
+          "https://arweave.net:443/a0ieiziq2JkYhWamlrUCHxrGYnHWUAMcONxRmfkWt-k" !==
+            bannerURL
+        ) {
+          bannerEl.src = bannerURL;
+        }
+
         const bioEL = document.getElementById("bio");
         if (bio && bioEL) {
           bioEL.innerText = bio;
