@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArProfiles</title>
+    <title>ArProfile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
       .splash__container {
         overflow: hidden;
         position: absolute;
@@ -142,32 +146,32 @@
         </div>
       </div>
     </div>
-    <div id="profile" class="overflow-hidden shadow-xl w-full h-screen bg-blue-500">
-      <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" />
-      <div class="flex justify-center -mt-8">
-          <img src="https://i.imgur.com/8Km9tLL.jpg" class="rounded-full border-solid border-white border-2 -mt-3">
+    <div id="profile" class="h-screen w-full bg-[#18152e]">
+      <div class="max-h-64 overflow-hidden object-center">
+        <img id="banner" class="w-full object-center"
+          src="https://arweave.net/VhpcVNAAnurFlYm78sNIWujv9CDMxter1OW28WRHDHU"
+          alt="" />
       </div>
-      <div class="text-center px-3 pb-6 pt-2">
-        <h3 id="name" class="text-white text-sm bold font-sans">Olivia Dunham</h3>
-        <p class="mt-2 font-sans font-light text-white">Hello, i'm from another the other side!</p>
+      <div class="flex justify-start px-5 -mt-12 mb-5">
+        <span clspanss="block relative h-32 w-32 object-center">
+          <img id="avatar" alt="Profile Avatar"
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            class="mx-auto object-cover rounded-full h-24 w-24 bg-white p-1" />
+        </span>
       </div>
-      <div class="flex justify-center pb-3 text-white">
-        <div class="text-center mr-3 border-r pr-3">
-          <h2>34</h2>
-          <span>Photos</span>
-        </div>
-        <div class="text-center">
-          <h2>42</h2>
-          <span>Friends</span>
+      <div class="px-7 mb-8">
+        <h2 id="name" class="text-3xl font-bold text-white"></h2>
+        <p id="handle" class="text-gray-200 mt-2"></p>
+        <p id="bio" class="mt-2 text-gray-400"></p>
+        <div id="links" class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">
         </div>
       </div>
     </div>
-    <div id="error" class="h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-24 py-8 rounded-lg shadow-2xl">
+    <div id="error" class="hidden h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-24 py-8 rounded-lg shadow-2xl">
         <p class="text-6xl md:text-7xl lg:text-9xl font-bold tracking-wider text-red-300">ERROR</p>
         <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-red-500 mt-4">Something Went Wrong</p>
         <p id="error-message" class="text-red-500 mt-8 py-2 border-y-2 text-center">Whoops, something went wrong on our servers.</p>
     </div>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./main.js"></script>
   </body>
 </html>
