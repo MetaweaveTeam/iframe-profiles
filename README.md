@@ -5,8 +5,8 @@
 First you need to edit the latest release link with the profile wallet address using query param `address` or with your handler using query param `handler`<br>
 **\[REMEMBER\]** `#` is equal to `%23` example `user#handle` should be `user%23handle`.
 
-- `https://arweave.net/wtFZxTMjS7RspHEaRlamYm7JDjizWCvwsyHQQCARvyQ?address=<wallet_address>`
-- `https://arweave.net/wtFZxTMjS7RspHEaRlamYm7JDjizWCvwsyHQQCARvyQ?handler=<name%23unique>`
+- `https://arweave.net/AHSXXMYk4iNqyeBHXBAda_0bky7ozft1i8qjEXC86ms/?address=<wallet_address>`
+- `https://arweave.net/AHSXXMYk4iNqyeBHXBAda_0bky7ozft1i8qjEXC86ms/?handler=<name%23unique>`
 
 then you just add this link to iframe and then adds the iframe to your website
 `<iframe src="<link>" frameorder="0" scrolling="auto" width="<width>" height="<height>"></iframe>`
