@@ -19,6 +19,7 @@ module.exports = {
   entry: ["./src/main.js"],
   output: {
     filename: "main.js",
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [html],
